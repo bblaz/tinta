@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Word of the Day</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Word of the Day</h1>
+      <div class="row mb-3">
+        <div class="col-12">
+          {% if wotd_today and wotd_today.state != 'draft' %}
+          <div class="card">
+            <div class="card-header">
+              {{ format_date(wotd_today.date) }}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Current Word of the day</h5>
+              The current Word of the day is <u><i>{{ wotd_today.word.name }}</i></u>.
+            </div>
+            {% if wotd_today.end_date %}
+            <div class="card-footer text-muted text-center">
+              Deadline for submissions: {{ format_datetime(wotd_today.end_date) }}
+            </div>
+            {% endif %}
+          </div>
+          {% else %}
+          <div class="card">
+            <div class="card-header">
+              {{ today }}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Current Word of the day</h5>
+              Today's Word of the Day for today has not been issued yet.
+            </div>
+            {% if wotd and wotd.start_date and wotd.state == 'draft' %}
+            <div class="card-footer text-muted text-center">
+              Next word will be issued: {{ format_datetime(wotd.start_date) }}
+            </div>
+            {% elif wotd_next and wotd_next.start_date %}
+            <div class="card-footer text-muted text-center">
+              Next word will be issued: {{ format_datetime(wotd_next.start_date) }}
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <h3>Previous Words of the Day</h3>
+
+      {% for wotd_row in wotds_previous | batch(4) %}
+      <div class="row">
+        {% for wotd in wotd_row %}
+        <div class="col-lg-3">
+          <div class="card mb-1">
+            <div class="card-header">
+              {{ format_date(wotd.date) }}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ wotd.word.name }}</h5>
+            </div>
+            <div class="card-footer text-muted text-center">
+              {% if wotd.end_date and wotd.state == 'open' %}
+              Submit yours by: <br/>{{ format_datetime(wotd.end_date) }}
+              {% elif wotd.end_date and wotd.state == 'closed' %}
+              Closed at: <br/>{{ format_datetime(wotd.end_date) }}
+              {% else %}
+              Closed
+              {% endif %}
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

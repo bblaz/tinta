@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+  <data grouped="1">
+    <record model="ir.message" id="msg_unique_date">
+      <field name="text">There may be only one Word of the Day per day.</field>
+    </record>
+    <record model="ir.message" id="msg_unique_word">
+      <field name="text">Word of the Day must be unique.</field>
+    </record>
+    <record model="ir.message" id="msg_word_not_found">
+      <field name="text">Word not found.</field>
+    </record>
+    <record model="ir.message" id="msg_word_ran_out">
+      <field name="text">All words used up.</field>
+    </record>
+  </data>
+</tryton>

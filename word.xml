@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+  <data>
+
+    <menuitem name="Words" parent="tinta.menu_tinta" id="menu_words"/>
+
+    <record model="ir.ui.view" id="word_view_form">
+      <field name="model">tinta.word</field>
+      <field name="type">form</field>
+      <field name="name">word_form</field>
+    </record>
+    <record model="ir.ui.view" id="word_view_tree">
+      <field name="model">tinta.word</field>
+      <field name="type">tree</field>
+      <field name="name">word_tree</field>
+    </record>
+    <record model="ir.action.act_window" id="act_word">
+      <field name="name">Words</field>
+      <field name="res_model">tinta.word</field>
+    </record>
+    <record model="ir.action.act_window.view" id="act_word_view1">
+      <field name="sequence" eval="10"/>
+      <field name="view" ref="word_view_tree"/>
+      <field name="act_window" ref="act_word"/>
+    </record>
+    <record model="ir.action.act_window.view" id="act_word_view2">
+      <field name="sequence" eval="20"/>
+      <field name="view" ref="word_view_form"/>
+      <field name="act_window" ref="act_word"/>
+    </record>
+    <menuitem action="act_word" parent="tinta.menu_words" id="menu_words_form"/>
+
+    <record model="ir.ui.view" id="wotd_view_form">
+      <field name="model">tinta.word.wotd</field>
+      <field name="type">form</field>
+      <field name="name">wotd_form</field>
+    </record>
+    <record model="ir.ui.view" id="wotd_view_tree">
+      <field name="model">tinta.word.wotd</field>
+      <field name="type">tree</field>
+      <field name="name">wotd_tree</field>
+    </record>
+    <record model="ir.action.act_window" id="act_wotd">
+      <field name="name">Words of the today</field>
+      <field name="res_model">tinta.word.wotd</field>
+    </record>
+    <record model="ir.action.act_window.view" id="act_wotd_view1">
+      <field name="sequence" eval="10"/>
+      <field name="view" ref="wotd_view_tree"/>
+      <field name="act_window" ref="act_wotd"/>
+    </record>
+    <record model="ir.action.act_window.view" id="act_wotd_view2">
+      <field name="sequence" eval="20"/>
+      <field name="view" ref="wotd_view_form"/>
+      <field name="act_window" ref="act_wotd"/>
+    </record>
+    <menuitem action="act_wotd" parent="tinta.menu_words" id="menu_wotd"/>
+
+    <record model="ir.model.button" id="but_wotd_draft">
+			<field name="name">draft</field>
+			<field name="string">Draft</field>
+			<field name="model" search="[('model', '=', 'tinta.word.wotd')]"/>
+		</record>
+    <record model="ir.model.button" id="but_wotd_open">
+			<field name="name">open</field>
+			<field name="string">Open</field>
+			<field name="model" search="[('model', '=', 'tinta.word.wotd')]"/>
+		</record>
+    <record model="ir.model.button" id="but_wotd_close">
+			<field name="name">close</field>
+			<field name="string">Close</field>
+			<field name="model" search="[('model', '=', 'tinta.word.wotd')]"/>
+		</record>
+
+    <record model="ir.action.wizard" id="wizard_wotd_generate">
+      <field name="name">Generate WOTD</field>
+      <field name="wiz_name">tinta.word.wotd.generate</field>
+    </record>
+    <menuitem action="wizard_wotd_generate" parent="tinta.menu_words" id="menu_wotd_generate" sequence="90"/>
+
+
+
+  </data>
+</tryton>

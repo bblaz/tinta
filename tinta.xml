@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+  <data>
+
+    <record model="ir.ui.icon" id="icon_tinta">
+      <field name="name">tinta</field>
+      <field name="path">icons/vector-pen.svg</field>
+    </record>
+    <menuitem name="Tinta" id="menu_tinta" sequence="3" icon="tinta"/>
+
+  </data>
+</tryton>

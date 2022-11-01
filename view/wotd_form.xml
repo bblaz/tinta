@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<form>
+  <label name="date"/>
+  <field name="date"/>
+  <label name="state"/>
+  <field name="state"/>
+
+  <label name="word"/>
+  <field name="word" colspan="3"/>
+
+  <label name="start_date"/>
+  <field name="start_date"/>
+  <label name="end_date"/>
+  <field name="end_date"/>
+
+  <group id="buttons" colspan="2" col="-1">
+    <button name="draft"/>
+    <button name="open"/>
+    <button name="close"/>
+  </group>
+</form>
