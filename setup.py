@@ -99,7 +99,7 @@ setup(name=name,
     package_data={
         'trytond.modules.tinta': (info.get('xml', [])
             + ['tryton.cfg', 'view/*.xml', 'locale/*.po', '*.fodt',
-                'icons/*.svg', 'tests/*.rst']),
+                'icons/*.svg', 'templates/*.html', 'tests/*.rst']),
         },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
