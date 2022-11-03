@@ -57,16 +57,13 @@ def wotd(request, pool):
         ('state', 'in', ['open', 'draft']),
         ('date', '>', Date.today()),
         ], limit=1, order=[('date', 'ASC')])
+    wotds_active = WOTD.search([
+        ('date', '<', Date.today()),
+        ('state', '=', 'open'),
+        ])
     wotds_previous = WOTD.search([
-        'OR',
-        [
-            ('date', '<', Date.today()),
-            ('state', '=', 'open'),
-        ],
-        [
-            ('date', '<=', Date.today()),
-            ('state', '=', 'closed'),
-            ],
+        ('date', '<=', Date.today()),
+        ('state', '=', 'closed'),
         ])
     wotd = None
     wotd_next = None
@@ -79,6 +76,6 @@ def wotd(request, pool):
         t.render(
             today=Date.today(),
             wotd_today=wotd, wotd_next=wotd_next,
-            wotds_previous=wotds_previous),
+            wotds_active=wotds_active, wotds_previous=wotds_previous),
         mimetype="text/html")
     return str([{'date': wotd.date, 'word': wotd.word.name} for wotd in wotds])

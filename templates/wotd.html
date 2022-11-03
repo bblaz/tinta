@@ -49,35 +49,67 @@
         </div>
       </div>
 
-      <h3>Previous Words of the Day</h3>
+      {% if wotds_active %}
+        <h3>Active Words of the Day</h3>
 
-      {% for wotd_row in wotds_previous | batch(4) %}
-      <div class="row">
-        {% for wotd in wotd_row %}
-        <div class="col-lg-3">
-          <div class="card mb-1">
-            <div class="card-header">
-              {{ format_date(wotd.date) }}
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">{{ wotd.word.name }}</h5>
-            </div>
-            <div class="card-footer text-muted text-center">
-              {% if wotd.end_date and wotd.state == 'open' %}
-              Submit yours by: <br/>{{ format_datetime(wotd.end_date) }}
-              {% elif wotd.end_date and wotd.state == 'closed' %}
-              Closed at: <br/>{{ format_datetime(wotd.end_date) }}
-              {% else %}
-              Closed
-              {% endif %}
-            </div>
+        {% for wotd_row in wotds_active | batch(4) %}
+        <div class="row">
+          {% for wotd in wotd_row %}
+          <div class="col-lg-3">
+            <div class="card mb-1">
+              <div class="card-header">
+                {{ format_date(wotd.date) }}
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{ wotd.word.name }}</h5>
+              </div>
+              <div class="card-footer text-muted text-center">
+                {% if wotd.end_date and wotd.state == 'open' %}
+                Submit yours by: <br/>{{ format_datetime(wotd.end_date) }}
+                {% elif wotd.end_date and wotd.state == 'closed' %}
+                Closed at: <br/>{{ format_datetime(wotd.end_date) }}
+                {% else %}
+                Closed
+                {% endif %}
+              </div>
 
+            </div>
           </div>
+          {% endfor %}
         </div>
         {% endfor %}
-      </div>
-      {% endfor %}
+      {% endif %}
 
+      {% if wotds_previous %}
+        <h3>Previous Words of the Day</h3>
+
+        {% for wotd_row in wotds_previous | batch(4) %}
+        <div class="row">
+          {% for wotd in wotd_row %}
+          <div class="col-lg-3">
+            <div class="card mb-1">
+              <div class="card-header">
+                {{ format_date(wotd.date) }}
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{ wotd.word.name }}</h5>
+              </div>
+              <div class="card-footer text-muted text-center">
+                {% if wotd.end_date and wotd.state == 'open' %}
+                Submit yours by: <br/>{{ format_datetime(wotd.end_date) }}
+                {% elif wotd.end_date and wotd.state == 'closed' %}
+                Closed at: <br/>{{ format_datetime(wotd.end_date) }}
+                {% else %}
+                Closed
+                {% endif %}
+              </div>
+
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      {% endif %}
 
 
     </div>
