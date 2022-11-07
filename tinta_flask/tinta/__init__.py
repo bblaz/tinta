@@ -17,7 +17,7 @@ tryton = Tryton(None, configure_jinja=True)
 
 try:
     import tinta.config as _cfg
-    config = 'tinta.config.'
+    config = 'tinta_flask.tinta.config.'
 except ImportError:
     import trytond.modules.tinta.flask_tinta.config as _cfg     # noqa
     config = 'trytond.modules.tinta.flask_tinta.config.'
