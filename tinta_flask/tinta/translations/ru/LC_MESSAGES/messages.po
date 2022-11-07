@@ -1,0 +1,84 @@
+# Russian translations for Tinta.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-11-07 20:32+0100\n"
+"PO-Revision-Date: 2022-11-07 17:08+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
+
+#: main/templates/wotd.html:3 main/views.py:77
+msgid "Word of the Day"
+msgstr ""
+
+#: main/templates/wotd.html:12 main/templates/wotd.html:27
+msgid "Current Word of the day"
+msgstr ""
+
+#: main/templates/wotd.html:13
+msgid "The current Word of the day is <u><i>%(word)</i></u>."
+msgstr ""
+
+#: main/templates/wotd.html:17
+msgid "Deadline for submissions"
+msgstr ""
+
+#: main/templates/wotd.html:28
+msgid "Today's Word of the Day for today has not been issued yet."
+msgstr ""
+
+#: main/templates/wotd.html:32 main/templates/wotd.html:36
+msgid "Next word will be issued"
+msgstr ""
+
+#: main/templates/wotd.html:45
+msgid "Active Words of the Day"
+msgstr ""
+
+#: main/templates/wotd.html:60 main/templates/wotd.html:91
+msgid "Submit yours by"
+msgstr ""
+
+#: main/templates/wotd.html:62 main/templates/wotd.html:93
+msgid "Closed at"
+msgstr ""
+
+#: main/templates/wotd.html:64 main/templates/wotd.html:95
+msgid "Closed"
+msgstr ""
+
+#: main/templates/wotd.html:76
+msgid "Previous Words of the Day"
+msgstr ""
+
+#: templates/footer.html:2
+msgid "All rights reserved."
+msgstr ""
+
+#: templates/footer.html:6
+#, python-format
+msgid ""
+"Powered by: Open source (GPLv3) %(tinta)s  based on %(tryton)s and "
+"%(flask)s"
+msgstr ""
+
+#: templates/nav.html:15
+msgid "Home"
+msgstr ""
+
+#: templates/nav.html:24
+msgid "Language"
+msgstr ""
+

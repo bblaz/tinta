@@ -61,7 +61,7 @@ else:
             break
 if local_version:
     version += '+' + '.'.join(local_version)
-requires = ['jinja2']
+requires = ['flask_tryton', 'flask', 'flask_babel']
 for dep in info.get('depends', []):
     if not re.match(r'(ir|res)(\W|$)', dep):
         requires.append(get_require_version('trytond_%s' % dep))
@@ -90,47 +90,33 @@ setup(name=name,
         "Source Code": 'https://hg.tryton.org/modules/tinta',
         },
     keywords='tinta trytond drawing',
-    package_dir={'trytond.modules.tinta': '.'},
+    package_dir={
+        'trytond.modules.tinta': '.',
+        'tinta_flask': 'tinta_flask',
+        },
     packages=(
         ['trytond.modules.tinta']
         + ['trytond.modules.tinta.%s' % p
             for p in find_packages()]
+        + ['tinta_flask']
         ),
     package_data={
         'trytond.modules.tinta': (info.get('xml', [])
             + ['tryton.cfg', 'view/*.xml', 'locale/*.po', '*.fodt',
-                'icons/*.svg', 'templates/*.html', 'tests/*.rst']),
+                'icons/*.svg', 'templates/*.html', 'tests/*.rst',
+                'flask_tinta/*']),
         },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Plugins',
         'Framework :: Tryton',
+        'Intended Audience :: Artists',
         'Intended Audience :: Developers',
-        'Intended Audience :: Financial and Insurance Industry',
-        'Intended Audience :: Legal Industry',
         'License :: OSI Approved :: '
         'GNU General Public License v3 or later (GPLv3+)',
-        'Natural Language :: Bulgarian',
-        'Natural Language :: Catalan',
-        'Natural Language :: Chinese (Simplified)',
-        'Natural Language :: Czech',
-        'Natural Language :: Dutch',
         'Natural Language :: English',
-        'Natural Language :: Finnish',
-        'Natural Language :: French',
-        'Natural Language :: German',
-        'Natural Language :: Hungarian',
-        'Natural Language :: Indonesian',
-        'Natural Language :: Italian',
-        'Natural Language :: Persian',
-        'Natural Language :: Polish',
-        'Natural Language :: Portuguese (Brazilian)',
-        'Natural Language :: Romanian',
         'Natural Language :: Russian',
         'Natural Language :: Slovenian',
-        'Natural Language :: Spanish',
-        'Natural Language :: Turkish',
-        'Natural Language :: Ukrainian',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
@@ -138,7 +124,7 @@ setup(name=name,
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: Implementation :: CPython',
-        'Topic :: Office/Business',
+        'Topic :: Art',
         ],
     license='GPL-3',
     python_requires='>=3.7',

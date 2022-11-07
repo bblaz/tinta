@@ -1,0 +1,12 @@
+<div class="ms-5 me-5">
+  <span class="text-muted">2022 {{ company }} © {{ gettext("All rights reserved.") }}</span><br/>
+  <span class="text-muted small">
+    {% autoescape false %}
+    {{
+      gettext("Powered by: Open source (GPLv3) %(tinta)s  based on %(tryton)s and %(flask)s",
+              tinta='<a class="text-decoration-none text-muted" href="https://github.com/bblaz/tinta" target="_blank">Tinta</a>',
+              tryton='<a class="text-decoration-none text-muted" href="https://www.tryton.org/" target="_blank">Tryton</a>',
+              flask='<a class="text-decoration-none text-muted" href="https://flask.palletsprojects.com" target="_blank">Flask</a>') }}
+    {% endautoescape %}
+  </span>
+</div>

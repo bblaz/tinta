@@ -1,0 +1,39 @@
+<header class="site-header">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand mr-4" href="/">
+        <i class="bi bi-vector-pen d-inline-block align-top" height="30" alt="TINTA"></i>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link{% if request.endpoint == 'main.home' %} active{% endif %}" href="{{ url_for('main.home') }}">{{ _("Home") }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav navbar-nav navbar-right" id="langNav">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-translate"></i> {{ gettext("Language") }}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end">
+              <li><a class="dropdown-item" href="?lang=en"><span class="fi fi-gb"></span> English</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="?lang=ru"><span class="fi fi-ru"></span> Русский</a></li>
+              <li><a class="dropdown-item" href="?lang=sl"><span class="fi fi-si"></span> Slovenščina</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+  </nav>
+</header>

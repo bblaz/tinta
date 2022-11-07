@@ -1,0 +1,83 @@
+# Slovenian translations for Tinta.
+# Copyright (C) 2022 Blaž Bregar
+# This file is distributed under the same license as the Tinta project.
+# Blaž Bregar <blaz@aklaro.si>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  Tinta\n"
+"Report-Msgid-Bugs-To: blaz@aklaro.si\n"
+"POT-Creation-Date: 2022-11-07 20:32+0100\n"
+"PO-Revision-Date: 2022-11-07 16:59+0100\n"
+"Last-Translator: Blaž Bregar <blaz@aklaro.si>\n"
+"Language: sl\n"
+"Language-Team: Blaž Bregar <blaz@aklaro.si>\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 "
+"|| n%100==4 ? 2 : 3);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.11.0\n"
+
+#: main/templates/wotd.html:3 main/views.py:77
+msgid "Word of the Day"
+msgstr "Beseda dneva"
+
+#: main/templates/wotd.html:12 main/templates/wotd.html:27
+msgid "Current Word of the day"
+msgstr "Današnja beseda dneva"
+
+#: main/templates/wotd.html:13
+msgid "The current Word of the day is <u><i>%(word)</i></u>."
+msgstr "Današnja beseda dneva je <u><i>%(word)</i></u>."
+
+#: main/templates/wotd.html:17
+msgid "Deadline for submissions"
+msgstr "Rok za oddajo:"
+
+#: main/templates/wotd.html:28
+msgid "Today's Word of the Day for today has not been issued yet."
+msgstr "Današnja beseda dneva še ni bila objavljena."
+
+#: main/templates/wotd.html:32 main/templates/wotd.html:36
+msgid "Next word will be issued"
+msgstr "Naslednja beseda dneva bo objavljena"
+
+#: main/templates/wotd.html:45
+msgid "Active Words of the Day"
+msgstr "Aktivne besede dneva"
+
+#: main/templates/wotd.html:60 main/templates/wotd.html:91
+msgid "Submit yours by"
+msgstr "Oddajte svojo"
+
+#: main/templates/wotd.html:62 main/templates/wotd.html:93
+msgid "Closed at"
+msgstr "Zaprto ob"
+
+#: main/templates/wotd.html:64 main/templates/wotd.html:95
+msgid "Closed"
+msgstr "Zaprto"
+
+#: main/templates/wotd.html:76
+msgid "Previous Words of the Day"
+msgstr "Prejšnje besede dneva"
+
+#: templates/footer.html:2
+msgid "All rights reserved."
+msgstr "Vse pravice pridržane."
+
+#: templates/footer.html:6
+#, python-format
+msgid ""
+"Powered by: Open source (GPLv3) %(tinta)s  based on %(tryton)s and "
+"%(flask)s"
+msgstr ""
+
+#: templates/nav.html:15
+msgid "Home"
+msgstr "Domov"
+
+#: templates/nav.html:24
+msgid "Language"
+msgstr "Jezik"
