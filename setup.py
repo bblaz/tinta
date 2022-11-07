@@ -29,6 +29,19 @@ def get_require_version(name):
     return require
 
 
+def package_files(directory):
+    paths = []
+    for (path, directories, filenames) in os.walk(directory):
+        for filename in filenames:
+            if filename.endswith('.pyc'):
+                continue
+            path2 = path.split(directory)
+            paths.append(os.path.join(path2[1], filename))
+    # print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %s" % path2)
+    # print(paths)
+    return paths
+
+
 config = ConfigParser()
 config.read_file(open(os.path.join(os.path.dirname(__file__), 'tryton.cfg')))
 info = dict(config.items('tryton'))
@@ -99,12 +112,16 @@ setup(name=name,
         + ['trytond.modules.tinta.%s' % p
             for p in find_packages()]
         + ['tinta_flask']
+        + ['tinta_flask.tinta']
+        + ['tinta_flask.tinta.%s' % p
+            for p in find_packages('tinta_flask/tinta')]
         ),
     package_data={
         'trytond.modules.tinta': (info.get('xml', [])
             + ['tryton.cfg', 'view/*.xml', 'locale/*.po', '*.fodt',
-                'icons/*.svg', 'templates/*.html', 'tests/*.rst',
-                'flask_tinta/*']),
+                'icons/*.svg', 'tests/*.rst', 'templates/*.html']),
+        'tinta_flask.tinta': (package_files('tinta_flask/tinta/')
+            + ['templates/*.html', 'static/*', 'translations/**']),
         },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
