@@ -10,7 +10,7 @@
       </div>
       <div class="card-body">
         <h5 class="card-title">{{ gettext("Current Word of the day") }}</h5>
-        {{ gettext("The current Word of the day is %(word).", word="<u><i>%s</i></u>" % wotd_today.word.name ) }}.
+        {{ gettext("The current Word of the day is %(word)s.", word="<u><i>%s</i></u>" % wotd_today.word.name ) }}.
       </div>
       {% if wotd_today.end_date %}
       <div class="card-footer text-muted text-center">
