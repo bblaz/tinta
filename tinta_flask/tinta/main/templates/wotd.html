@@ -11,7 +11,7 @@
       <div class="card-body">
         <h5 class="card-title">{{ gettext("Current Word of the day") }}</h5>
         {% autoescape false %}
-        {{ gettext("The current Word of the day is %(word)s.", word="<u><i>%s</i></u>" % wotd_today.word.name ) }}
+        {{ gettext("The current Word of the day is %(word)s.", word="<u><i>%s</i></u>" % wotd_today.wotd ) }}
         {% endautoescape %}
       </div>
       {% if wotd_today.end_date %}
@@ -55,7 +55,7 @@
           {{ wotd.date | format_date }}
         </div>
         <div class="card-body">
-          <h5 class="card-title">{{ wotd.word.name }}</h5>
+          <h5 class="card-title">{{ wotd.wotd }}</h5>
         </div>
         <div class="card-footer text-muted text-center">
           {% if wotd.end_date and wotd.state == 'open' %}
@@ -66,7 +66,6 @@
           {{ gettext("Closed") }}
           {% endif %}
         </div>
-
       </div>
     </div>
     {% endfor %}
@@ -86,7 +85,7 @@
           {{ wotd.date | format_date }}
         </div>
         <div class="card-body">
-          <h5 class="card-title">{{ wotd.word.name }}</h5>
+          <h5 class="card-title">{{ wotd.wotd }}</h5>
         </div>
         <div class="card-footer text-muted text-center">
           {% if wotd.end_date and wotd.state == 'open' %}
@@ -97,7 +96,6 @@
           {{ gettext("Closed") }}
           {% endif %}
         </div>
-
       </div>
     </div>
     {% endfor %}

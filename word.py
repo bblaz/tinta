@@ -53,6 +53,9 @@ class WordOTD(Workflow, ModelSQL, ModelView):
             'required': Eval('state').in_(['open', 'closed'])
             },
         ondelete='RESTRICT')
+    wotd = fields.Function(
+        fields.Char("WOTD"),
+        'get_wotd')
 
     start_date = fields.DateTime("Start date", format="%H:%M")
     end_date = fields.DateTime("End date", format="%H:%M")
@@ -101,6 +104,20 @@ class WordOTD(Workflow, ModelSQL, ModelView):
         return 'draft'
 
     @classmethod
+    def get_wotd(cls, ids, names):
+        res = {}
+        for name in names:
+            res[name] = {}
+
+        for wotd in ids:
+            for name in names:
+                if name == 'wotd':
+                    res[name][wotd.id] = None
+                    if wotd.word:
+                        res[name][wotd.id] = wotd.word.name
+        return res
+
+    @classmethod
     @Workflow.transition('closed')
     def close(cls, ids):
         pass
@@ -145,6 +162,10 @@ class WordOTD(Workflow, ModelSQL, ModelView):
                 gettext('party.msg_word_not_found'))
 
         return words[0]
+
+    @classmethod
+    def generate_date(cls, date):
+        pass
 
     @classmethod
     def generate_wotd(cls, ids=None, date=None):

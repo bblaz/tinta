@@ -18,7 +18,7 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">Current Word of the day</h5>
-              The current Word of the day is <u><i>{{ wotd_today.word.name }}</i></u>.
+              The current Word of the day is <u><i>{{ wotd_today.wotd }}</i></u>.
             </div>
             {% if wotd_today.end_date %}
             <div class="card-footer text-muted text-center">
@@ -61,7 +61,7 @@
                 {{ format_date(wotd.date) }}
               </div>
               <div class="card-body">
-                <h5 class="card-title">{{ wotd.word.name }}</h5>
+                <h5 class="card-title">{{ wotd.wotd }}</h5>
               </div>
               <div class="card-footer text-muted text-center">
                 {% if wotd.end_date and wotd.state == 'open' %}
@@ -92,7 +92,7 @@
                 {{ format_date(wotd.date) }}
               </div>
               <div class="card-body">
-                <h5 class="card-title">{{ wotd.word.name }}</h5>
+                <h5 class="card-title">{{ wotd.wotd }}</h5>
               </div>
               <div class="card-footer text-muted text-center">
                 {% if wotd.end_date and wotd.state == 'open' %}
