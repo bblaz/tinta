@@ -49,7 +49,7 @@ def get_timezone():
 @main.route('/home')
 @tryton.transaction()
 def home():
-    current_app.logger.info(request.headers)
+    current_app.logger.debug(request.headers)
     wotds = WOTD.search([
         ('state', 'in', ['open', 'draft']),
         ('date', '=', Date.today()),
