@@ -15,5 +15,8 @@
     <record model="ir.message" id="msg_word_ran_out">
       <field name="text">All words used up.</field>
     </record>
+    <record model="ir.message" id="msg_word_required">
+      <field name="text">Date %(date)s requires a word.</field>
+    </record>
   </data>
 </tryton>

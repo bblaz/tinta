@@ -48,7 +48,10 @@ class WordOTD(Workflow, ModelSQL, ModelView):
     state = fields.Selection(WOTD_STATES, "State", readonly=True)
     date = fields.Date("Date", required=True)
     word = fields.Many2One(
-        'tinta.word', "Word", required=True, select=True,
+        'tinta.word', "Word", select=True,
+        states={
+            'required': Eval('state').in_(['open', 'closed'])
+            },
         ondelete='RESTRICT')
 
     start_date = fields.DateTime("Start date", format="%H:%M")
@@ -81,6 +84,13 @@ class WordOTD(Workflow, ModelSQL, ModelView):
         # Record order
         cls._order.insert(0, ('date', 'DESC'))
 
+    def check_word(self):
+        if not self.word:
+            raise WordError(
+                gettext(
+                    "tinta.msg_word_required",
+                    date=self.date))
+
     @staticmethod
     def default_date():
         Date = Pool().get('ir.date')
@@ -103,17 +113,14 @@ class WordOTD(Workflow, ModelSQL, ModelView):
     @classmethod
     @Workflow.transition('open')
     def open(cls, ids):
-        pass
+        for wotd in ids:
+            wotd.check_word()
 
-    @classmethod
-    def generate_wotd(cls, ids=None, date=None):
+    @staticmethod
+    def generate():
         pool = Pool()
-        Date = pool.get('ir.date')
         Word = pool.get('tinta.word')
         WordOTD = pool.get('tinta.word.wotd')
-
-        if not date:
-            date = Date.today()
 
         words = Word.search_count([])
         wotds = WordOTD.search_count([])
@@ -137,11 +144,19 @@ class WordOTD(Workflow, ModelSQL, ModelView):
             raise WordError(
                 gettext('party.msg_word_not_found'))
 
-        logger.info("Found unassigned words: %s" % words)
+        return words[0]
+
+    @classmethod
+    def generate_wotd(cls, ids=None, date=None):
+        pool = Pool()
+        Date = pool.get('ir.date')
+
+        if not date:
+            date = Date.today()
 
         wotd = WordOTD()
         wotd.date = date
-        wotd.word = words[0]
+        wotd.word = WordOTD.generate()
         wotd.save()
 
 
