@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<form>
+  <notebook>
+    <page id="word" string="Words">
+      <label name="word_frequency"/>
+      <field name="word_frequency"/>
+      <label name="word_weekday"/>
+      <field name="word_weekday"/>
+
+      <label name="word_publish_time"/>
+      <field name="word_publish_time"/>
+      <label name="word_submission_time"/>
+      <field name="word_submission_time"/>
+    </page>
+  </notebook>
+</form>

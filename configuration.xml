@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+  <data>
+
+    <record model="ir.ui.view" id="configuration_view_form">
+        <field name="model">tinta.configuration</field>
+        <field name="type">form</field>
+        <field name="name">configuration_form</field>
+    </record>
+    <record model="ir.action.act_window" id="act_configuration">
+        <field name="name">Configuration</field>
+        <field name="res_model">tinta.configuration</field>
+    </record>
+    <record model="ir.action.act_window.view" id="act_configuration_view1">
+        <field name="sequence" eval="10"/>
+        <field name="view" ref="configuration_view_form"/>
+        <field name="act_window" ref="act_configuration"/>
+    </record>
+    <menuitem parent="tinta.menu_tinta" action="act_configuration" id="menu_tinta_configuration" sequence="99" icon="tryton-settings"/>
+
+  </data>
+</tryton>

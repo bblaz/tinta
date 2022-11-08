@@ -14,11 +14,15 @@
         {{ gettext("The current Word of the day is %(word)s.", word="<u><i>%s</i></u>" % wotd_today.wotd ) }}
         {% endautoescape %}
       </div>
-      {% if wotd_today.end_date %}
       <div class="card-footer text-muted text-center">
+        {% if wotd_today.end_date and wotd_today.state == 'open' %}
         {{ gettext("Deadline for submissions") }}: {{ wotd_today.end_date | format_datetime }}
+        {% elif wotd_today.end_date and wotd_today.state == 'closed' %}
+        {{ gettext("Submissions closed at") }}: {{ wotd_today.end_date | format_datetime }}
+        {% else %}
+        {{ gettext("Submissions closed") }}
+        {% endif %}
       </div>
-      {% endif %}
     </div>
     {% else %}
     <div class="card">
@@ -27,15 +31,15 @@
       </div>
       <div class="card-body">
         <h5 class="card-title">{{ gettext("Current Word of the day") }}</h5>
-        {{ gettext("Today\'s Word of the Day for today has not been issued yet.") }}
+        {{ gettext("Today\'s Word of the Day for today has not been published yet.") }}
       </div>
-      {% if wotd and wotd.start_date and wotd.state == 'draft' %}
+      {% if wotd_today and wotd_today.start_date and wotd_today.state == 'draft' %}
       <div class="card-footer text-muted text-center">
-        {{ gettext("Next word will be issued") }}: {{ wotd.start_date | format_datetime }}
+        {{ gettext("Next word will be published") }}: {{ wotd_today.start_date | format_datetime }}
       </div>
       {% elif wotd_next and wotd_next.start_date %}
       <div class="card-footer text-muted text-center">
-        {{ gettext("Next word will be issued") }}: {{ wotd_next.start_date | format_datetime }}
+        {{ gettext("Next word will be published") }}: {{ wotd_next.start_date | format_datetime }}
       </div>
       {% endif %}
     </div>

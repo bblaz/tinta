@@ -50,9 +50,8 @@ def wotd(request, pool):
     Date = pool.get('ir.date')
     WOTD = pool.get('tinta.word.wotd')
     wotds = WOTD.search([
-        ('state', 'in', ['open', 'draft']),
         ('date', '=', Date.today()),
-        ], limit=5)
+        ], limit=1)
     wotds_next = WOTD.search([
         ('state', 'in', ['open', 'draft']),
         ('date', '>', Date.today()),
@@ -62,7 +61,7 @@ def wotd(request, pool):
         ('state', '=', 'open'),
         ])
     wotds_previous = WOTD.search([
-        ('date', '<=', Date.today()),
+        ('date', '<', Date.today()),
         ('state', '=', 'closed'),
         ])
     wotd = None

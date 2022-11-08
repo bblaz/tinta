@@ -10,6 +10,7 @@ from trytond.model import (
     Unique, )
 from trytond.pool import Pool
 from trytond.pyson import Eval
+from trytond.transaction import Transaction
 from trytond.wizard import Wizard, StateView, StateTransition, Button
 
 from .exceptions import OutOfWordsError, WordError
@@ -163,9 +164,100 @@ class WordOTD(Workflow, ModelSQL, ModelView):
 
         return words[0]
 
+    @staticmethod
+    def create_day(date):
+        pool = Pool()
+        Config = pool.get('tinta.configuration')
+        config = Config(1)
+        WordOTD = pool.get('tinta.word.wotd')
+
+        # Check if date already exists
+        wotds = WordOTD.search([
+            ('date', '=', date)
+            ])
+        if wotds:
+            # Skip if it does
+            return
+
+        # Create new date if it does not
+        wotd = WordOTD()
+        wotd.date = date
+        wotd.start_date = datetime.datetime.combine(
+            wotd.date, config.word_publish_time,
+            tzinfo=datetime.timezone.utc)
+        wotd.end_date = wotd.start_date + config.word_submission_time
+        wotd.save()
+
     @classmethod
-    def generate_date(cls, date):
-        pass
+    def generate_days(cls):
+        pool = Pool()
+        Config = pool.get('tinta.configuration')
+        config = Config(1)
+        Date = pool.get('ir.date')
+        WordOTD = pool.get('tinta.word.wotd')
+
+        if config.word_frequency == 'dailly':
+            WordOTD.create_day(Date.today())
+        elif config.word_frequency == 'weekly':
+            if Date.today().weekday() in config.word_weekday:
+                WordOTD.create_day(Date.today())
+
+    @classmethod
+    def populate_days(cls):
+        pool = Pool()
+        WordOTD = pool.get('tinta.word.wotd')
+
+        # Get current datetime
+        in_one_hour = datetime.datetime.now() + datetime.timedelta(hours=1)
+
+        # Get days to be populated
+        wotds = WordOTD.search([
+            ('state', '=', 'draft'),
+            ('start_date', '<=', in_one_hour)
+            ])
+        if wotds:
+            for wotd in wotds:
+                wotd.word = wotd.generate()
+                wotd.save()
+
+    @classmethod
+    def publish_days(cls):
+        pool = Pool()
+        WordOTD = pool.get('tinta.word.wotd')
+
+        # Get current datetime
+        in_one_hour = datetime.datetime.now() + datetime.timedelta(hours=1)
+        wotds = WordOTD.search([
+            ('state', '=', 'draft'),
+            ('start_date', '<=', in_one_hour),
+            ('word', '!=', None),
+            ])
+        if wotds:
+            for wotd in wotds:
+                delta = wotd.start_date - datetime.datetime.now()
+                with Transaction().set_context(queue_scheduled_at=delta):
+                    WordOTD.__queue__.open([wotd])
+
+    @classmethod
+    def close_days(cls):
+        logger.info("Closing days...")
+        pool = Pool()
+        WordOTD = pool.get('tinta.word.wotd')
+
+        # Get current datetime
+        in_one_hour = datetime.datetime.now() + datetime.timedelta(hours=1)
+        wotds = WordOTD.search([
+            ('state', '=', 'open'),
+            ('end_date', '<=', in_one_hour),
+            ])
+        if wotds:
+            logger.info("Found WOTDs to close: %s" % wotds)
+            for wotd in wotds:
+                delta = wotd.end_date - datetime.datetime.now()
+                with Transaction().set_context(queue_scheduled_at=delta):
+                    WordOTD.__queue__.close([wotd])
+
+        logger.info("Days closing complete.")
 
     @classmethod
     def generate_wotd(cls, ids=None, date=None):

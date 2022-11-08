@@ -2,6 +2,8 @@
 # this repository contains the full copyright notices and license terms.
 from trytond.pool import Pool
 
+from . import configuration
+from . import ir
 from . import tinta
 from . import word
 
@@ -13,6 +15,9 @@ __all__ = ['register', 'routes']
 
 def register():
     Pool.register(
+        configuration.Configuration,
+        configuration.ConfigurationWord,
+        ir.Cron,
         word.Word,
         word.WordOTD,
         module='tinta', type_='model')
