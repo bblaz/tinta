@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-11-07 20:32+0100\n"
+"POT-Creation-Date: 2022-11-08 18:56+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,43 +21,52 @@ msgstr ""
 msgid "Word of the Day"
 msgstr ""
 
-#: main/templates/wotd.html:12 main/templates/wotd.html:27
+#: main/templates/wotd.html:12 main/templates/wotd.html:33
 msgid "Current Word of the day"
 msgstr ""
 
-#: main/templates/wotd.html:13
-msgid "The current Word of the day is <u><i>%(word)</i></u>."
+#: main/templates/wotd.html:14
+#, python-format
+msgid "The current Word of the day is %(word)s."
 msgstr ""
 
-#: main/templates/wotd.html:17
+#: main/templates/wotd.html:19
 msgid "Deadline for submissions"
 msgstr ""
 
-#: main/templates/wotd.html:28
-msgid "Today's Word of the Day for today has not been issued yet."
+#: main/templates/wotd.html:21
+msgid "Submissions closed at"
 msgstr ""
 
-#: main/templates/wotd.html:32 main/templates/wotd.html:36
-msgid "Next word will be issued"
+#: main/templates/wotd.html:23
+msgid "Submissions closed"
 msgstr ""
 
-#: main/templates/wotd.html:45
+#: main/templates/wotd.html:34
+msgid "Today's Word of the Day for today has not been published yet."
+msgstr ""
+
+#: main/templates/wotd.html:38 main/templates/wotd.html:42
+msgid "Next word will be published"
+msgstr ""
+
+#: main/templates/wotd.html:51
 msgid "Active Words of the Day"
 msgstr ""
 
-#: main/templates/wotd.html:60 main/templates/wotd.html:91
+#: main/templates/wotd.html:66 main/templates/wotd.html:96
 msgid "Submit yours by"
 msgstr ""
 
-#: main/templates/wotd.html:62 main/templates/wotd.html:93
+#: main/templates/wotd.html:68 main/templates/wotd.html:98
 msgid "Closed at"
 msgstr ""
 
-#: main/templates/wotd.html:64 main/templates/wotd.html:95
+#: main/templates/wotd.html:70 main/templates/wotd.html:100
 msgid "Closed"
 msgstr ""
 
-#: main/templates/wotd.html:76
+#: main/templates/wotd.html:81
 msgid "Previous Words of the Day"
 msgstr ""
 

@@ -5,13 +5,13 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-11-07 20:32+0100\n"
+"Project-Id-Version: Tinta 6.4\n"
+"Report-Msgid-Bugs-To: dunaeva11@gmail.com\n"
+"POT-Creation-Date: 2022-11-08 18:56+0100\n"
 "PO-Revision-Date: 2022-11-07 17:08+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Ольга Дунаева <dunaeva11@gmail.com>\n"
 "Language: ru\n"
-"Language-Team: ru <LL@li.org>\n"
+"Language-Team: ru <dunaeva11@gmail.com>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
@@ -21,51 +21,60 @@ msgstr ""
 
 #: main/templates/wotd.html:3 main/views.py:77
 msgid "Word of the Day"
-msgstr ""
+msgstr "Слово дня"
 
-#: main/templates/wotd.html:12 main/templates/wotd.html:27
+#: main/templates/wotd.html:12 main/templates/wotd.html:33
 msgid "Current Word of the day"
-msgstr ""
+msgstr "Текущее слово дня"
 
-#: main/templates/wotd.html:13
-msgid "The current Word of the day is <u><i>%(word)</i></u>."
-msgstr ""
+#: main/templates/wotd.html:14
+#, python-format
+msgid "The current Word of the day is %(word)s."
+msgstr "Текущее слово дня %(word)s."
 
-#: main/templates/wotd.html:17
+#: main/templates/wotd.html:19
 msgid "Deadline for submissions"
-msgstr ""
+msgstr "Срок сдачи"
 
-#: main/templates/wotd.html:28
-msgid "Today's Word of the Day for today has not been issued yet."
-msgstr ""
+#: main/templates/wotd.html:21
+msgid "Submissions closed at"
+msgstr "Срок сдачи завершен"
 
-#: main/templates/wotd.html:32 main/templates/wotd.html:36
-msgid "Next word will be issued"
-msgstr ""
+#: main/templates/wotd.html:23
+msgid "Submissions closed"
+msgstr "Время вышло"
 
-#: main/templates/wotd.html:45
+#: main/templates/wotd.html:34
+msgid "Today's Word of the Day for today has not been published yet."
+msgstr "Новое слово дня еще не готово"
+
+#: main/templates/wotd.html:38 main/templates/wotd.html:42
+msgid "Next word will be published"
+msgstr "Следущее слово будет объявлено"
+
+#: main/templates/wotd.html:51
 msgid "Active Words of the Day"
-msgstr ""
+msgstr "Действующее слово дня"
 
-#: main/templates/wotd.html:60 main/templates/wotd.html:91
+#: main/templates/wotd.html:66 main/templates/wotd.html:96
 msgid "Submit yours by"
-msgstr ""
+msgstr "Сдача работ до"
 
-#: main/templates/wotd.html:62 main/templates/wotd.html:93
+#: main/templates/wotd.html:68 main/templates/wotd.html:98
 msgid "Closed at"
-msgstr ""
+msgstr "Завершено"
 
-#: main/templates/wotd.html:64 main/templates/wotd.html:95
+#: main/templates/wotd.html:70 main/templates/wotd.html:100
 msgid "Closed"
-msgstr ""
+msgstr "Завершено"
 
-#: main/templates/wotd.html:76
+#: main/templates/wotd.html:81
 msgid "Previous Words of the Day"
-msgstr ""
+msgstr "Предыдущие слова"
 
 #: templates/footer.html:2
 msgid "All rights reserved."
-msgstr ""
+msgstr "Все права зарегистрированы"
 
 #: templates/footer.html:6
 #, python-format
@@ -76,9 +85,8 @@ msgstr ""
 
 #: templates/nav.html:15
 msgid "Home"
-msgstr ""
+msgstr "Домой"
 
 #: templates/nav.html:24
 msgid "Language"
-msgstr ""
-
+msgstr "Язык"

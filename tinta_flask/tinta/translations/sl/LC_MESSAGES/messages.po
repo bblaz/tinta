@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version:  Tinta\n"
+"Project-Id-Version: Tinta 6.4\n"
 "Report-Msgid-Bugs-To: blaz@aklaro.si\n"
-"POT-Creation-Date: 2022-11-07 20:32+0100\n"
+"POT-Creation-Date: 2022-11-08 18:56+0100\n"
 "PO-Revision-Date: 2022-11-07 16:59+0100\n"
 "Last-Translator: Blaž Bregar <blaz@aklaro.si>\n"
 "Language: sl\n"
@@ -23,43 +23,52 @@ msgstr ""
 msgid "Word of the Day"
 msgstr "Beseda dneva"
 
-#: main/templates/wotd.html:12 main/templates/wotd.html:27
+#: main/templates/wotd.html:12 main/templates/wotd.html:33
 msgid "Current Word of the day"
 msgstr "Današnja beseda dneva"
 
-#: main/templates/wotd.html:13
-msgid "The current Word of the day is <u><i>%(word)</i></u>."
+#: main/templates/wotd.html:14
+#, python-format
+msgid "The current Word of the day is %(word)s."
 msgstr "Današnja beseda dneva je <u><i>%(word)</i></u>."
 
-#: main/templates/wotd.html:17
+#: main/templates/wotd.html:19
 msgid "Deadline for submissions"
 msgstr "Rok za oddajo:"
 
-#: main/templates/wotd.html:28
-msgid "Today's Word of the Day for today has not been issued yet."
+#: main/templates/wotd.html:21
+msgid "Submissions closed at"
+msgstr "Rok za oddajo potekel ob"
+
+#: main/templates/wotd.html:23
+msgid "Submissions closed"
+msgstr "Rok za oddajo potekel"
+
+#: main/templates/wotd.html:34
+msgid "Today's Word of the Day for today has not been published yet."
 msgstr "Današnja beseda dneva še ni bila objavljena."
 
-#: main/templates/wotd.html:32 main/templates/wotd.html:36
-msgid "Next word will be issued"
+#: main/templates/wotd.html:38 main/templates/wotd.html:42
+msgid "Next word will be published"
 msgstr "Naslednja beseda dneva bo objavljena"
 
-#: main/templates/wotd.html:45
+#: main/templates/wotd.html:51
 msgid "Active Words of the Day"
 msgstr "Aktivne besede dneva"
 
-#: main/templates/wotd.html:60 main/templates/wotd.html:91
+#: main/templates/wotd.html:66 main/templates/wotd.html:96
 msgid "Submit yours by"
 msgstr "Oddajte svojo"
 
-#: main/templates/wotd.html:62 main/templates/wotd.html:93
+#: main/templates/wotd.html:68 main/templates/wotd.html:98
 msgid "Closed at"
 msgstr "Zaprto ob"
 
-#: main/templates/wotd.html:64 main/templates/wotd.html:95
+#: main/templates/wotd.html:70 main/templates/wotd.html:100
 msgid "Closed"
 msgstr "Zaprto"
 
-#: main/templates/wotd.html:76
+#: main/templates/wotd.html:81
 msgid "Previous Words of the Day"
 msgstr "Prejšnje besede dneva"
 
