@@ -44,6 +44,9 @@ class Word(ModelSQL, ModelView):
                 'tinta.msg_unique_word'),
             ]
 
+        # Record order
+        cls._order.insert(0, ('name', 'ASC'))
+
 
 WOTD_STATES = [
     ('draft', "Draft"),
