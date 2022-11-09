@@ -30,7 +30,7 @@ msgstr "Današnja beseda dneva"
 #: main/templates/wotd.html:14
 #, python-format
 msgid "The current Word of the day is %(word)s."
-msgstr "Današnja beseda dneva je <u><i>%(word)</i></u>."
+msgstr "Današnja beseda dneva je %(word)s."
 
 #: main/templates/wotd.html:19
 msgid "Deadline for submissions"
