@@ -80,7 +80,16 @@
     </record>
     <menuitem action="wizard_wotd_generate" parent="tinta.menu_words" id="menu_wotd_generate" sequence="90"/>
 
-
+    <record model="ir.ui.view" id="word_import_start_view">
+			<field name="model">tinta.word.import.start</field>
+			<field name="type">form</field>
+			<field name="name">word_import_start_form</field>
+		</record>
+    <record model="ir.action.wizard" id="wizard_word_import">
+      <field name="name">Import words</field>
+      <field name="wiz_name">tinta.word.import</field>
+    </record>
+    <menuitem action="wizard_word_import" parent="tinta.menu_words" id="menu_word_import" sequence="95"/>
 
   </data>
 </tryton>

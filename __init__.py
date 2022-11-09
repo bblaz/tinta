@@ -18,10 +18,12 @@ def register():
         configuration.Configuration,
         configuration.ConfigurationWord,
         ir.Cron,
+        word.ImportWordStart,
         word.Word,
         word.WordOTD,
         module='tinta', type_='model')
     Pool.register(
+        word.ImportWord,
         word.GenerateWOTD,
         module='tinta', type_='wizard')
     Pool.register(

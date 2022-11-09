@@ -33,6 +33,17 @@ class Word(ModelSQL, ModelView):
         'tinta.word.wotd', 'word', "Words of the Day",
         readonly=True)
 
+    @classmethod
+    def __setup__(cls):
+        super().__setup__()
+
+        t = cls.__table__()
+        # Unique words
+        cls._sql_constraints = [
+            ('word_uniq', Unique(t, t.name),
+                'tinta.msg_unique_word'),
+            ]
+
 
 WOTD_STATES = [
     ('draft', "Draft"),
@@ -286,4 +297,45 @@ class GenerateWOTD(Wizard):
         WordOTD = Pool().get('tinta.word.wotd')
         WordOTD.generate_wotd()
         logger.info("WOTD done.")
+        return 'end'
+
+
+class ImportWordStart(ModelView):
+    """Tinta Import Words Start"""
+    __name__ = 'tinta.word.import.start'
+
+    words = fields.Text(
+        "Words", required=True,
+        help="One word per line.")
+
+
+class ImportWord(Wizard):
+    """Tinta Import Words"""
+    __name__ = 'tinta.word.import'
+
+    start_state = 'start'
+
+    start = StateView(
+        'tinta.word.import.start',
+        'tinta.word_import_start_view', [
+            Button('Cancel', 'end', 'tryton-cancel'),
+            Button('Import', 'import_', 'tryton-ok', default=True),
+            ])
+
+    import_ = StateTransition()
+
+    def transition_import_(self):
+        Word = Pool().get('tinta.word')
+
+        for word in self.start.words.split('\n'):
+            logger.info("Found word: %s")
+
+            try:
+                w = Word()
+                w.name = word.strip()
+                w.save()
+            except Exception as e:
+                logger.warning("Exception was raised %s: %s" % (type(e), e))
+                continue
+
         return 'end'
