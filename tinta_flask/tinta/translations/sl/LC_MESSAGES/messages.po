@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: Tinta 6.4\n"
 "Report-Msgid-Bugs-To: blaz@aklaro.si\n"
 "POT-Creation-Date: 2022-11-08 18:56+0100\n"
-"PO-Revision-Date: 2022-11-07 16:59+0100\n"
+"PO-Revision-Date: 2022-11-10 19:51+0000\n"
 "Last-Translator: Blaž Bregar <blaz@aklaro.si>\n"
+"Language-Team: Slovenian <http://weblate.aklaro.dev/projects/tinta/tinta-web/"
+"sl/>\n"
 "Language: sl\n"
-"Language-Team: Blaž Bregar <blaz@aklaro.si>\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 "
-"|| n%100==4 ? 2 : 3);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 4.14.2\n"
 "Generated-By: Babel 2.11.0\n"
 
 #: main/templates/wotd.html:3 main/views.py:77
@@ -34,7 +36,7 @@ msgstr "Današnja beseda dneva je %(word)s."
 
 #: main/templates/wotd.html:19
 msgid "Deadline for submissions"
-msgstr "Rok za oddajo:"
+msgstr "Rok za oddajo"
 
 #: main/templates/wotd.html:21
 msgid "Submissions closed at"
