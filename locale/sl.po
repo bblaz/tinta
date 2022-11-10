@@ -1,0 +1,304 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:tinta.configuration,word_frequency:"
+msgid "Frequency"
+msgstr ""
+
+msgctxt "field:tinta.configuration,word_publish_time:"
+msgid "Publish time"
+msgstr ""
+
+msgctxt "field:tinta.configuration,word_submission_time:"
+msgid "Submission in"
+msgstr ""
+
+msgctxt "field:tinta.configuration,word_weekday:"
+msgid "Days of week"
+msgstr ""
+
+msgctxt "field:tinta.configuration.word,word_frequency:"
+msgid "Frequency"
+msgstr ""
+
+msgctxt "field:tinta.configuration.word,word_publish_time:"
+msgid "Publish time"
+msgstr ""
+
+msgctxt "field:tinta.configuration.word,word_submission_time:"
+msgid "Submission in"
+msgstr ""
+
+msgctxt "field:tinta.configuration.word,word_weekday:"
+msgid "Days of week"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:tinta.word,name:"
+msgid "Name"
+msgstr "Naziv"
+
+msgctxt "field:tinta.word,wotds:"
+msgid "Words of the Day"
+msgstr ""
+
+msgctxt "field:tinta.word.import.start,words:"
+msgid "Words"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:tinta.word.wotd,date:"
+msgid "Date"
+msgstr "Datum"
+
+msgctxt "field:tinta.word.wotd,end_date:"
+msgid "End date"
+msgstr ""
+
+msgctxt "field:tinta.word.wotd,start_date:"
+msgid "Start date"
+msgstr ""
+
+#, fuzzy
+msgctxt "field:tinta.word.wotd,state:"
+msgid "State"
+msgstr "Stanje"
+
+msgctxt "field:tinta.word.wotd,word:"
+msgid "Word"
+msgstr ""
+
+msgctxt "field:tinta.word.wotd,wotd:"
+msgid "WOTD"
+msgstr ""
+
+msgctxt "help:tinta.word.import.start,words:"
+msgid "One word per line."
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.action,name:act_configuration"
+msgid "Configuration"
+msgstr "Konfiguracija"
+
+msgctxt "model:ir.action,name:act_word"
+msgid "Words"
+msgstr ""
+
+msgctxt "model:ir.action,name:act_wotd"
+msgid "Words of the today"
+msgstr ""
+
+msgctxt "model:ir.action,name:wizard_word_import"
+msgid "Import words"
+msgstr ""
+
+msgctxt "model:ir.action,name:wizard_wotd_generate"
+msgid "Generate WOTD"
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_unique_date"
+msgid "There may be only one Word of the Day per day."
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_unique_word"
+msgid "Words must be unique."
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_word_not_found"
+msgid "Word not found."
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_word_ran_out"
+msgid "All words used up."
+msgstr ""
+
+msgctxt "model:ir.message,text:msg_word_required"
+msgid "Date %(date)s requires a word."
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:but_wotd_close"
+msgid "Close"
+msgstr "Zapri"
+
+msgctxt "model:ir.model.button,string:but_wotd_draft"
+msgid "Draft"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.model.button,string:but_wotd_open"
+msgid "Open"
+msgstr "Odprto"
+
+msgctxt "model:ir.ui.menu,name:menu_tinta"
+msgid "Tinta"
+msgstr ""
+
+#, fuzzy
+msgctxt "model:ir.ui.menu,name:menu_tinta_configuration"
+msgid "Configuration"
+msgstr "Konfiguracija"
+
+msgctxt "model:ir.ui.menu,name:menu_word_import"
+msgid "Import words"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:menu_words"
+msgid "Words"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:menu_words_form"
+msgid "Words"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:menu_wotd"
+msgid "Words of the today"
+msgstr ""
+
+msgctxt "model:ir.ui.menu,name:menu_wotd_generate"
+msgid "Generate WOTD"
+msgstr ""
+
+msgctxt "model:tinta.configuration,name:"
+msgid "Tinta Configuration"
+msgstr ""
+
+msgctxt "model:tinta.configuration.word,name:"
+msgid "Tinta Word Configuration"
+msgstr ""
+
+msgctxt "model:tinta.word,name:"
+msgid "Tinta Words"
+msgstr ""
+
+msgctxt "model:tinta.word.import.start,name:"
+msgid "Tinta Import Words Start"
+msgstr ""
+
+msgctxt "model:tinta.word.wotd,name:"
+msgid "Tinta Word of the Day"
+msgstr ""
+
+msgctxt "selection:ir.cron,method:"
+msgid "Close Words of the Day"
+msgstr ""
+
+msgctxt "selection:ir.cron,method:"
+msgid "Generate days for Words of the Day"
+msgstr ""
+
+msgctxt "selection:ir.cron,method:"
+msgid "Populate days with Words of the Day"
+msgstr ""
+
+msgctxt "selection:ir.cron,method:"
+msgid "Publish Words of the Day"
+msgstr ""
+
+msgctxt "selection:tinta.configuration,word_frequency:"
+msgid "Dailly"
+msgstr ""
+
+msgctxt "selection:tinta.configuration,word_frequency:"
+msgid "Weekly"
+msgstr ""
+
+msgctxt "selection:tinta.configuration,word_weekday:"
+msgid "Friday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration,word_weekday:"
+msgid "Monday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration,word_weekday:"
+msgid "Saturday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration,word_weekday:"
+msgid "Sunday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration,word_weekday:"
+msgid "Thursday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration,word_weekday:"
+msgid "Tuesday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration,word_weekday:"
+msgid "Wednesday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration.word,word_frequency:"
+msgid "Dailly"
+msgstr ""
+
+msgctxt "selection:tinta.configuration.word,word_frequency:"
+msgid "Weekly"
+msgstr ""
+
+msgctxt "selection:tinta.configuration.word,word_weekday:"
+msgid "Friday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration.word,word_weekday:"
+msgid "Monday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration.word,word_weekday:"
+msgid "Saturday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration.word,word_weekday:"
+msgid "Sunday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration.word,word_weekday:"
+msgid "Thursday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration.word,word_weekday:"
+msgid "Tuesday"
+msgstr ""
+
+msgctxt "selection:tinta.configuration.word,word_weekday:"
+msgid "Wednesday"
+msgstr ""
+
+msgctxt "selection:tinta.word.wotd,state:"
+msgid "Closed"
+msgstr ""
+
+msgctxt "selection:tinta.word.wotd,state:"
+msgid "Draft"
+msgstr ""
+
+#, fuzzy
+msgctxt "selection:tinta.word.wotd,state:"
+msgid "Open"
+msgstr "Odprto"
+
+msgctxt "view:tinta.configuration:"
+msgid "Words"
+msgstr ""
+
+msgctxt "view:tinta.word.wotd:"
+msgid "End time"
+msgstr ""
+
+msgctxt "view:tinta.word.wotd:"
+msgid "Start time"
+msgstr ""
+
+#, fuzzy
+msgctxt "wizard_button:tinta.word.import,start,end:"
+msgid "Cancel"
+msgstr "Prekliči"
+
+msgctxt "wizard_button:tinta.word.import,start,import_:"
+msgid "Import"
+msgstr ""
