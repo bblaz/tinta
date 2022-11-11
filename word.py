@@ -227,7 +227,8 @@ class WordOTD(Workflow, ModelSQL, ModelView):
         # Get days to be populated
         wotds = WordOTD.search([
             ('state', '=', 'draft'),
-            ('start_date', '<=', in_one_hour)
+            ('start_date', '<=', in_one_hour),
+            ('word', '=', None),
             ])
         if wotds:
             for wotd in wotds:
