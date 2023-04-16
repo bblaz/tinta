@@ -74,7 +74,7 @@ else:
             break
 if local_version:
     version += '+' + '.'.join(local_version)
-requires = ['flask_tryton', 'flask', 'flask_babel']
+requires = ['flask_tryton', 'flask', 'flask_babel<=2.0.0']
 for dep in info.get('depends', []):
     if not re.match(r'(ir|res)(\W|$)', dep):
         requires.append(get_require_version('trytond_%s' % dep))
